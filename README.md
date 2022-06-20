@@ -1,2 +1,4 @@
 # TIG
-I gained something everyday wheather it's skills or an ideas.
+> Today I Gained
+
+I gain something everyday whether it's skills or thinking.
