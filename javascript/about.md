@@ -14,6 +14,8 @@
 한개의 스레드에서 작업을 처리하기 때문에 싱글스레드가 맞다. <br />
 처리 순서대로 정리를 해보자<br />
 
+![스크린샷 2022-06-15 오전 12 03 19](https://user-images.githubusercontent.com/58814562/175476764-bfc1e7e4-5f18-4b12-9655-d63931612a38.png)
+
 1. 함수를 호출하면 `call stack`에는 stack이 하나씩 쌓이게 된다.
 2. stack은 `LIFO(Last In First Out)`형식으로 처리되는데, 나중에 들어온 stack이 먼저 처리된다.<br />
 3. 이때 `call stack`에서 불러온 함수 중에 비동기적인 함수가 있을 경우엔 `web API`가 이것의 Run함수를 호출한다.<br />
