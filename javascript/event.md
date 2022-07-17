@@ -42,6 +42,56 @@ div.addEventListener("click", 실행함수, {
 });
 ```
 
+# event-delegation
+
+> 하위 요소에 각각 이벤트를 붙이지 않고 상위 요소에서 하위 요소의 이벤트들을 제어하는 방식
+
+### 예시
+
+todo list를 만든다고 가정했을 때, checkbox를 만드는 `input` 엘리먼트를 생성할 때마다 이벤트를 추가해야 한다면 굉장히 비효율적일 것이다.<br />
+때문에, `<input>`의 상위요소인 `<ul>`에 이벤트 리스너를 달아놓고, 하위에서 발생한 클릭 이벤트를 감지하도록 설정하면 된다. <br />
+
+두가지 방법을 비교해보자.
+
+```html
+<div>
+  <h1>Todo-list</h1>
+  <ul class="itemList">
+    <li>
+      <input type="checkbox" id="item1" />
+      <label for="item1">리스트 1</label>
+    </li>
+    <li>
+      <input type="checkbox" id="item2" />
+      <label for="item2">리스트 2</label>
+    </li>
+  </ul>
+</div>
+```
+
+1. 화면 내에 있는 모든 `<input>`에 각각 이벤트리스너 추가하는 방법
+
+   ```javascript
+   var inputs = document.querySelectorAll("input");
+   inputs.forEach(function (input) {
+     input.addEventListener("click", function (evnet) {
+       alert("clicked!");
+     });
+   });
+   ```
+
+2. `<input>`를 감싸고 있는 `<ul>`에 이벤트리스너를 달아놓은 후, 하위에서 발생하는 이벤트를 감지하도록 하는 방법
+
+   ```javascript
+   var itemList = document.querySelector(".itemList");
+   itemList.addEventListener("click", function (event) {
+     alert("clicked!");
+   });
+   ```
+
+1번의 경우, 새롭게 `<input>`가 추가될 경우엔, 추가할 때마다 일일이 이벤트리스너 또한 추가하는 작업이 필요하다. <br />
+하지만 2번의 경우엔 `<input>`를 포함한 `<ul>`에 이벤트리스너를 달아 새롭게 `<input>`이 추가되더라도 상위요소에서 이벤트를 감지하기 때문에, 새로 추가해야 하는 작업이 필요 없게 된다.
+
 ---
 
 > 참고했습니다 :)
