@@ -44,7 +44,24 @@
 3. PUT
 4. DELETE
 
+---
+
+## URL과 URI의 차이점
+
+두 용어를 비슷하게나마 알고 있었지만, 혼용해서 사용해버리는 바람에 제대로 정리해보고자 한다.
+
+간단하게 말하자면, <span style="color: orange">URI는 식별하고 URL은 위치를 가르킨다</span>고 이해하면 될 것 같다.
+
+### URL
+
+> `Uniform Resource Locator`의 약자로, 흔히 **웹 주소**를 말할 때 사용한다. 컴퓨터 네트워크 상에서 리소스가 어디에 위치해있는지 알려주기 위한 규약으로, URI의 subset(부분집합)이다.
+
+### URI
+
+> `Uniform Resource Identifier`의 약자로, 특정 리소스를 식별하는 **통합 자원 식별자**를 의미한다. 웹 기술에서 사용하는 논리적 또는 물리적 리소스를 식별하는 고유한 문자열 sequence이다.
+
 > 참고하였습니다 :)
 
 - [HTTP와 HTTPS의 차이점](https://brunch.co.kr/@hyoi0303/10)
 - [GET과 POST의 차이](https://hongsii.github.io/2017/08/02/what-is-the-difference-get-and-post/)
+- [URI랑 URL 차이점이 뭔데?](https://www.charlezz.com/?p=44767)
