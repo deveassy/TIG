@@ -35,3 +35,15 @@
   `Promise`를 더 쉽게 사용할 수 있도록 해주는 문법 (= syntatic sugar)<br />
   - 함수 앞에 `async` 키워드를 사용하고 함수 내부의 Promise 앞부분에는 `await` 키워드를 추가하여 사용
   - 에러핸들링을 위해서 `try...catch` 구문을 사용
+
+### Promise와 Callback의 차이점
+
+두가지 모두 자바스크립트에서 비동기처리를 담당하지만, 몇가지 차이점이 존재한다.
+
+- 가독성 측면에서 <span style="color: orange">Promise > Callback</span><br />
+  ➔ Promise는 성공/실패 메소드를 나누어 `.then`을 사용하여 처리하기 때문에 가독성이 좋다.<br />
+  만약 연속적인 비동기처리가 필요한 경우엔, Callback을 사용하면 계속해서 처리값을 전달하는 과정에 있어서 흔히 말하는 **콜백지옥**이 발생하여 가독성이 나빠진다.
+
+- 재사용성 측면에서 <span style="color: orange">Promise > Callback</span><br />
+  ➔ Callback을 사용하여 비동기처리를 할 경우엔, Callback 바깥에서는 처리값을 재사용할 수 없다.<br />
+  하지만 Promise를 사용하면 비동기로 처리한 값이 `Promise` 객체에 저장되기 때문에, 값의 재사용이 가능해진다.
